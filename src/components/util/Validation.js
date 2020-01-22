@@ -32,6 +32,14 @@ function validateForm(event, state) {
       document.getElementById("confirmpassword").classList.add("is-danger");
       return { matchedpassword: true, blankfield: false };
     }
+    if (state.hasOwnProperty("oldpassword") && state.password === "") {
+      document.getElementById("oldpassword").classList.add("is-danger");
+      return { blankfield: true };
+    }
+    if (state.hasOwnProperty("verficationcode") && state.verficationcode === "") {
+      document.getElementById("verficationcode").classList.add("is-danger");
+      return { blankfield: true };
+    }
     return;
   }
 
